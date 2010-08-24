@@ -1,0 +1,1 @@
+require 'youthtree/capistrano'
