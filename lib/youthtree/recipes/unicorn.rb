@@ -4,7 +4,7 @@ YouthTree::Capistrano.load do
   yt_cset :unicorn_latest_config, 'config/unicorn.rb'
   yt_cset :unicorn_pid_file,    'tmp/pids'
   
-  namepace :unicorn do
+  namespace :unicorn do
     
     def signal!(signal)
       pid_file = "tmp/pids/unicorn.pid"
@@ -18,8 +18,7 @@ YouthTree::Capistrano.load do
     
     desc "Symlinks the unicorn config into place"
     task :symlink, :roles => :app do
-      from, to = "#{shared_path}/#{unicorn_shared_config}", "#{latest_release}/#{unicorn_latest_config}"
-      run "rm -rf '#{to}' && ln -s '#{from}' '#{to}'"
+      symlink_config unicorn_shared_config, unicorn_latest_config
     end
 
     desc "Starts the unicorn app server"

@@ -7,13 +7,12 @@ YouthTree::Capistrano.load do
     
     desc "Create an empty db config"
     task :setup do
-      run "mkdir -p '#{shared_path}/#{database_shared_config}'"
+      run "touch '#{shared_path}/#{database_shared_config}'"
     end
     
     desc "Symlinks the database.yml into place"
     task :symlink do
-      from, to = "#{shared_path}/#{database_shared_config}", "#{latest_release}/#{database_latest_config}"
-      run "rm -rf '#{to}' && ln -s '#{from}' '#{to}'"
+      symlink_config database_shared_config, database_latest_config
     end
     
   end

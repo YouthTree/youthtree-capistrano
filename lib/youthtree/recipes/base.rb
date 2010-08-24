@@ -1,5 +1,9 @@
 YouthTree::Capistrano.load do
   
+  def disabled?(feature_name)
+    exists?(feature_name) && send(feature_name) == false
+  end
+  
   def yt_cset(name, *args, &block)
     set(name, *args, &block) unless exists?(name)
   end
@@ -10,6 +14,11 @@ YouthTree::Capistrano.load do
   
   def bundle_exec(command)
     run "cd '#{latest_release}' && RAILS_ENV='#{rails_env}' bundle exec #{command}"
+  end
+  
+  def symlink_config(shared, current)
+    from, to = "#{shared_path}/#{shared}", "#{latest_release}/#{current}"
+    run "rm -rf '#{to}' && ln -s '#{from}' '#{to}'"
   end
   
   yt_cset :rails_env,     "staging"

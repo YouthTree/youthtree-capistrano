@@ -1,10 +1,15 @@
-# YouthTree JS #
+# YouthTree Capistrano #
 
-A set of tools for common javascript functionality shared across YouthTree applications.
+A set of capistrano recipes to use for deploying YT apps. Out of the box, does:
 
-Developed primarily for [TEDxPerth](http://tedxperth.org/) and [Big Help Mob](http://bighelpmob.org/)
-
-Relies on [Shuriken](http://github.com/Sutto/shuriken/).
+* RVM
+* Bundler
+* Unicorn
+* YouthTree Settings
+* Compass
+* Barista
+* Jammit
+* Symlinking Uploads
 
 ## Contributing ##
 

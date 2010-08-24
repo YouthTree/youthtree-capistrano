@@ -1,7 +1,8 @@
 require 'rubygems'
 require 'rake'
 
-require 'lib/youthtree-capistrano'
+$:.unshift "lib"
+require 'youthtree-capistrano'
 
 begin
   require 'jeweler'
@@ -15,6 +16,7 @@ begin
     gem.authors     = ["Darcy Laycock"]
     gem.add_dependency "rvm",     "~> 1.0" 
     gem.add_dependency "bundler", "~> 1.0"
+    gem.add_dependency "capistrano"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

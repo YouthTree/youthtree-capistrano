@@ -1,4 +1,4 @@
-YouthTree::Capistrano.load do
+YouthTree::Capistrano.load_named(:uploads) do
 
   yt_cset :uploads_shared, 'uploads'
   yt_cset :uploads_latest, 'public/uploads'
@@ -12,8 +12,7 @@ YouthTree::Capistrano.load do
     
     desc "Symlinks the uploads folder into place"
     task :symlink do
-      from, to = "#{shared_path}/#{uploads_shared}", "#{latest_release}/#{uploads_latest}"
-      run "rm -rf '#{to}' && ln -s '#{from}' '#{to}'"
+      symlink_config uploads_shared, uploads_latest
     end
     
   end
