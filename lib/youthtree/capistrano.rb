@@ -1,6 +1,6 @@
 module YouthTree
   module Capistrano
-    VERSION = "0.0.4".freeze
+    VERSION = "0.0.5".freeze
     
     def self.load(&blk)
       ::Capistrano::Configuration.instance(:must_exist).load(&blk)

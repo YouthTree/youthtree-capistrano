@@ -4,7 +4,7 @@ YouthTree::Capistrano.load do
     
     desc "Forces jammit to compress / package everything"
     task :update do
-      bundle_exec "jammit -f"
+      bundle_exec "jammit --force"
     end
     
   end

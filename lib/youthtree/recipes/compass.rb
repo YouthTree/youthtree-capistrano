@@ -4,7 +4,7 @@ YouthTree::Capistrano.load do
     
     desc "Forces compass to compile the current stylesheets"
     task :update do
-      bundle_exec "compass compile . --force"
+      bundle_exec "compass compile . --force --quiet"
     end
     
   end
