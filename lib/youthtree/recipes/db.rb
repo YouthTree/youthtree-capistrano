@@ -1,7 +1,8 @@
-YouthTree::Capistrano.load do
+YouthTree::Capistrano.load_named(:db) do
 
-  yt_cset :database_shared_config, 'database.yml'
-  yt_cset :database_latest_config, 'config/database.yml'
+  yt_cset :database_config_file_name, 'database.yml'
+  yt_cset(:database_shared_config) { database_config_file_name }
+  yt_cset(:database_latest_config) { "config/#{database_config_file_name}" }
 
   namespace :database do
     

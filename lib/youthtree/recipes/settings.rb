@@ -1,7 +1,8 @@
-YouthTree::Capistrano.load do
+YouthTree::Capistrano.load_named(:settings) do
 
-  yt_cset :settings_shared_config, 'settings.yml'
-  yt_cset :settings_latest_config, 'config/settings.yml'
+  yt_cset :settings_file_name, 'settings.yml'
+  yt_cset(:settings_shared_config) { settings_file_name }
+  yt_cset(:settings_latest_config) { "config/#{settings_file_name}" }
 
   namespace :settings do
     

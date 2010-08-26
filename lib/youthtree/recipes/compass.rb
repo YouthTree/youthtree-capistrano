@@ -1,4 +1,4 @@
-YouthTree::Capistrano.load do
+YouthTree::Capistrano.load_named(:compass) do
   
   namespace :compass do
     
