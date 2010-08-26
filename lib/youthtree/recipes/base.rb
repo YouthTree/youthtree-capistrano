@@ -21,10 +21,18 @@ YouthTree::Capistrano.load do
     run "rm -rf '#{to}' && ln -s '#{from}' '#{to}'"
   end
   
-  yt_cset :rails_env,     "staging"
+  %w(staging production).each do |env_name|
+    task env_name.to_sym do
+      puts "** Switching Rails Env to #{env_name} **"
+      set :rails_env, env_name
+    end
+  end
+  
+  yt_cset :default_stage, "staging"
   yt_cset :use_sudo,      false
   yt_cset :keep_releases, 10
   
+  yt_cset(:rails_env)   { default_stage }
   yt_cset(:application) { raise "Please Ensure you set the application name." }
   yt_cset(:user)        { application }
   yt_cset(:runner)      { user }
