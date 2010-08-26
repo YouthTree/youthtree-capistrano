@@ -1,4 +1,4 @@
-YouthTree::Capistrano.load do
+YouthTree::Capistrano.load_named(:barista) do
   namespace :barista do
     
     desc "Forces barista to compile the current coffeescripts"
