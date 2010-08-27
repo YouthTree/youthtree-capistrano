@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youthtree-capistrano}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Darcy Laycock"]
-  s.date = %q{2010-08-27}
+  s.date = %q{2010-08-28}
   s.description = %q{Capistrano tasks used for common Youth Tree deployments.}
   s.email = %q{sutto@sutto.net}
   s.extra_rdoc_files = [
