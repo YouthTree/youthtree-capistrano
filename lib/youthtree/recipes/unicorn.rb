@@ -29,7 +29,7 @@ YouthTree::Capistrano.load_named(:unicorn) do
       else
         command = "unicorn -D -E #{rails_env} -c '#{current_path}/#{unicorn_latest_config}' config.ru"
       end
-      run "cd '#{current_path}' && bundle exec "
+      run "cd '#{current_path}' && bundle exec #{command}"
     end
 
     desc "Stops the unicorn app server"
