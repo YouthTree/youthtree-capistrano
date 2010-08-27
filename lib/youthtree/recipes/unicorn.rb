@@ -1,5 +1,6 @@
 YouthTree::Capistrano.load_named(:unicorn) do
   
+  yt_cset :unicorn_app_type,      'rack'
   yt_cset :unicorn_shared_config, 'unicorn.rb'
   yt_cset :unicorn_latest_config, 'config/unicorn.rb'
   yt_cset :unicorn_pid_file,      'tmp/pids'
@@ -23,7 +24,12 @@ YouthTree::Capistrano.load_named(:unicorn) do
 
     desc "Starts the unicorn app server"
     task :start, :roles => :app do
-      run "cd '#{current_path}' && bundle exec unicorn_rails -D -E #{rails_env} -c '#{current_path}/#{unicorn_latest_config}'"
+      if unicorn_app_type.to_s == "rails"
+        command = "unicorn_rails -D -E #{rails_env} -c '#{current_path}/#{unicorn_latest_config}'"
+      else
+        command = "unicorn -D -E #{rails_env} -c '#{current_path}/#{unicorn_latest_config}' config.ru"
+      end
+      run "cd '#{current_path}' && bundle exec "
     end
 
     desc "Stops the unicorn app server"
