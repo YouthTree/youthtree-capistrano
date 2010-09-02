@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
      "lib/youth_tree/recipes/jammit.rb",
      "lib/youth_tree/recipes/rvm.rb",
      "lib/youth_tree/recipes/settings.rb",
+     "lib/youth_tree/recipes/syncing.rb",
      "lib/youth_tree/recipes/unicorn.rb",
      "lib/youth_tree/recipes/uploads.rb",
      "lib/youthtree-capistrano.rb",

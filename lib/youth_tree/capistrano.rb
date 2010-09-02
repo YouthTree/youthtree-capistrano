@@ -15,7 +15,7 @@ module YouthTree
     end
     
     def self.load_all!
-      load_recipe! %w(base rvm git bundler settings db unicorn compass barista jammit uploads)
+      load_recipe! %w(base rvm git bundler settings db unicorn compass barista jammit uploads syncing)
       load { load 'deploy' }
       load_recipe! 'deploy_hooks'
     end
