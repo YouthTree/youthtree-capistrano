@@ -18,6 +18,19 @@ Gem::Specification.new do |s|
   s.files = [
     "README.md",
      "Rakefile",
+     "lib/youth_tree/capistrano.rb",
+     "lib/youth_tree/recipes/barista.rb",
+     "lib/youth_tree/recipes/base.rb",
+     "lib/youth_tree/recipes/bundler.rb",
+     "lib/youth_tree/recipes/compass.rb",
+     "lib/youth_tree/recipes/db.rb",
+     "lib/youth_tree/recipes/deploy_hooks.rb",
+     "lib/youth_tree/recipes/git.rb",
+     "lib/youth_tree/recipes/jammit.rb",
+     "lib/youth_tree/recipes/rvm.rb",
+     "lib/youth_tree/recipes/settings.rb",
+     "lib/youth_tree/recipes/unicorn.rb",
+     "lib/youth_tree/recipes/uploads.rb",
      "lib/youthtree-capistrano.rb",
      "youthtree-capistrano.gemspec"
   ]
