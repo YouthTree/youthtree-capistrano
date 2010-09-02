@@ -1,13 +1,13 @@
 module YouthTree
   module Capistrano
-    VERSION = "0.1.3".freeze
+    VERSION = "0.2.0".freeze
     
     def self.load(&blk)
       ::Capistrano::Configuration.instance(:must_exist).load(&blk)
     end
     
     def self.load_recipe!(*names)
-      names.flatten.each { |name| require "youthtree/recipes/#{name}" }
+      names.flatten.each { |name| require "youth_tree/recipes/#{name}" }
     end
     
     def self.load_named(name, &blk)

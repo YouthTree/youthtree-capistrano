@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{youthtree-capistrano}
-  s.version = "0.1.3"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Darcy Laycock"]
-  s.date = %q{2010-08-28}
+  s.date = %q{2010-09-02}
   s.description = %q{Capistrano tasks used for common Youth Tree deployments.}
   s.email = %q{sutto@sutto.net}
   s.extra_rdoc_files = [
@@ -19,19 +19,6 @@ Gem::Specification.new do |s|
     "README.md",
      "Rakefile",
      "lib/youthtree-capistrano.rb",
-     "lib/youthtree/capistrano.rb",
-     "lib/youthtree/recipes/barista.rb",
-     "lib/youthtree/recipes/base.rb",
-     "lib/youthtree/recipes/bundler.rb",
-     "lib/youthtree/recipes/compass.rb",
-     "lib/youthtree/recipes/db.rb",
-     "lib/youthtree/recipes/deploy_hooks.rb",
-     "lib/youthtree/recipes/git.rb",
-     "lib/youthtree/recipes/jammit.rb",
-     "lib/youthtree/recipes/rvm.rb",
-     "lib/youthtree/recipes/settings.rb",
-     "lib/youthtree/recipes/unicorn.rb",
-     "lib/youthtree/recipes/uploads.rb",
      "youthtree-capistrano.gemspec"
   ]
   s.homepage = %q{http://github.com/YouthTree/youthtree-capistrano}
