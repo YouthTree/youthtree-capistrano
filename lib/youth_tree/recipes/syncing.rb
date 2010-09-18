@@ -36,7 +36,7 @@ YouthTree::Capistrano.load_named(:syncing) do
     desc "Loads data into the remote db from the given file"
     task :load_remote_db do
       run "mkdir -p '#{syncing_current_remote_dir}'"
-      run "cd '#{syncing_current_remote_dir}' && tar xzf '#{syncing_remote_archive}' ."
+      run "cd '#{syncing_current_remote_dir}' && tar xzf '#{syncing_remote_archive}'"
       bundle_exec "ydd load '#{syncing_current_remote_dir}' '#{latest_release}' --env='#{rails_env}'"
     end
     
@@ -50,7 +50,7 @@ YouthTree::Capistrano.load_named(:syncing) do
     desc "Loads data into the local db from the given file"
     task :load_local_db do
       lrun "mkdir -p '#{syncing_current_local_dir}'"
-      lrun "cd '#{syncing_current_local_dir}' && tar xzf '#{syncing_local_archive}' ."
+      lrun "cd '#{syncing_current_local_dir}' && tar xzf '#{syncing_local_archive}'"
       lrun "ydd load '#{syncing_current_local_dir}' '#{Dir.pwd}'"
     end
     
