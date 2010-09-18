@@ -21,6 +21,11 @@ YouthTree::Capistrano.load do
     run "rm -rf '#{to}' && ln -s '#{from}' '#{to}'"
   end
   
+  def lrun(command)
+    puts ">> #{command} # Run locally"
+    system command
+  end
+  
   %w(staging production).each do |env_name|
     task env_name.to_sym do
       puts "** Switching stage to #{env_name} **"

@@ -17,6 +17,7 @@ begin
     gem.add_dependency "rvm",     "~> 1.0" 
     gem.add_dependency "bundler", "~> 1.0"
     gem.add_dependency "capistrano"
+    gem.add_dependency "ydd"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
