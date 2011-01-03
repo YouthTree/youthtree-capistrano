@@ -1,19 +1,19 @@
 YouthTree::Capistrano.load do
   
   namespace :deploy do
-    desc "Call unicorn.start"
+    desc "Call start on your server"
     task :start, :roles => :app do
-      unicorn.start
+      send(server_name.to_sym).start
     end
     
-    desc "Call unicorn.stop"
+    desc "Call stop on your server"
     task :stop, :roles => :app do
-      unicorn.stop
+      send(server_name.to_sym).stop
     end
     
-    desc "Call unicorn.restart"
+    desc "Call restart on your server"
     task :restart, :roles => :app, :except => { :no_release => true } do
-      unicorn.restart
+      send(server_name.to_sym).restart
     end
   end
   

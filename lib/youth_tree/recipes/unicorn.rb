@@ -4,6 +4,8 @@ YouthTree::Capistrano.load_named(:unicorn) do
   yt_cset :unicorn_shared_config, 'unicorn.rb'
   yt_cset :unicorn_latest_config, 'config/unicorn.rb'
   yt_cset :unicorn_pid_file,      'tmp/pids'
+  yt_cset :server_name,           'unicorn'
+  
   
   namespace :unicorn do
     

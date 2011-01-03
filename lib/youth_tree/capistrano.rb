@@ -1,6 +1,6 @@
 module YouthTree
   module Capistrano
-    VERSION = "0.2.2".freeze
+    VERSION = "0.3.0".freeze
     
     def self.load(&blk)
       ::Capistrano::Configuration.instance(:must_exist).load(&blk)
@@ -15,6 +15,7 @@ module YouthTree
     end
     
     def self.load_all!
+      require 'youth_tree/capistrano/git_submodule_fix'
       load_recipe! %w(base rvm git bundler settings db unicorn compass barista jammit uploads syncing)
       load { load 'deploy' }
       load_recipe! 'deploy_hooks'
