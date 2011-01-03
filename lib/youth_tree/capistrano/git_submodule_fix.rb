@@ -27,7 +27,7 @@ Capistrano::Deploy::SCM::Git.class_eval do
     if variable(:git_enable_submodules)
       execute << "#{git} submodule #{verbose} init"
       execute << "#{git} submodule #{verbose} sync"
-      execute << "#{git} submodule #{verbose} update --recursive"
+      execute << "#{git} submodule #{verbose} update --init --recursive"
     end
 
     execute.join(" && ")
